@@ -11,4 +11,12 @@ export class UserService {
   create(data) {
     return this.http.post("https://reqres.in/api/users", data );
   }
+
+  update(id, data) {
+    return this.http.put("https://reqres.in/api/users/" + id, data );
+  }
+
+  delete(id) {
+    return this.http.delete("https://reqres.in/api/users/" + id);
+  }
 }

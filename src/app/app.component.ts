@@ -35,4 +35,29 @@ export class AppComponent {
           );
       }
     }
+
+    onUpdate() {
+      if(this.form.valid) {
+        console.log(this.form.value);
+        this.userService.update("286", this.form.value).subscribe(
+          (response: any) => {
+            console.log(response);
+          },
+          (errorResponse: any) => {
+            console.log(errorResponse);
+          }
+          );
+      }
+    }
+
+    onDelete() {
+      this.userService.delete("286").subscribe(
+        (response: any) => {
+          console.log(response);
+        },
+        (errorResponse: any) => {
+          console.log(errorResponse);
+        }
+        );
+    }
 }
